@@ -5,6 +5,8 @@ import ch.heigvd.dai.ios.binary.BinaryFileWriter;
 import ch.heigvd.dai.ios.binary.BufferedBinaryFileWriter;
 import ch.heigvd.dai.ios.text.BufferedTextFileWriter;
 import ch.heigvd.dai.ios.text.TextFileWriter;
+
+import java.io.IOException;
 import java.util.concurrent.Callable;
 import picocli.CommandLine;
 
@@ -19,7 +21,7 @@ public class Write implements Callable<Integer> {
   protected int sizeInBytes;
 
   @Override
-  public Integer call() {
+  public Integer call() throws IOException {
     Writable writer =
         switch (parent.getImplementation()) {
           case BINARY -> new BinaryFileWriter();

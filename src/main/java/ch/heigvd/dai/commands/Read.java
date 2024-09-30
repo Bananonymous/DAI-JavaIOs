@@ -5,6 +5,8 @@ import ch.heigvd.dai.ios.binary.BinaryFileReader;
 import ch.heigvd.dai.ios.binary.BufferedBinaryFileReader;
 import ch.heigvd.dai.ios.text.BufferedTextFileReader;
 import ch.heigvd.dai.ios.text.TextFileReader;
+
+import java.io.IOException;
 import java.util.concurrent.Callable;
 import picocli.CommandLine;
 
@@ -13,7 +15,7 @@ public class Read implements Callable<Integer> {
   @CommandLine.ParentCommand protected Root parent;
 
   @Override
-  public Integer call() {
+  public Integer call() throws IOException {
     Readable reader =
         switch (parent.getImplementation()) {
           case BINARY -> new BinaryFileReader();
