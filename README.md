@@ -3,9 +3,6 @@
 ## Description
 This repository contains benchmarking results for different types of file streams in terms of their efficiency when reading and writing binary and text data. The performance was measured for both buffered and non-buffered streams. You can find the results and the conclusions based on the benchmarks below.
 
-### GitHub Repository
-[Insert Link to Your Repository Here]
-
 ## Results
 
 ### Binary File Operations
